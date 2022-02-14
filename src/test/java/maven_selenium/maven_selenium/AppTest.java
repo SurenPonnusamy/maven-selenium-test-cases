@@ -50,8 +50,9 @@ public void addPipelineTest() {
 	driver.findElement(By.id("pipelineConfIcon")).click();
 	String pipelineConf = driver.findElement(By.id("pipelineConfiguration")).getText();
 	System.out.println(pipelineConf);
-	String expectedPipelineConf = "CNAP Pipeline Configur";
+	String expectedPipelineConf = "CNAP Pipeline Configuration";
 	assertEquals(pipelineConf, expectedPipelineConf);
+	driver.quit();
 }
 
 @AfterMethod
