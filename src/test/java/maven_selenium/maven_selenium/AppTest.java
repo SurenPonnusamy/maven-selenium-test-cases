@@ -65,8 +65,7 @@ public void addPipelineTest() {
 	driver.get("http://localhost:81/home");
 	driver.findElement(By.id("pipelineConfIcon")).click();
 	Select bServer = new Select(driver.findElement(By.id("buildServer")));
-	bServer.selectByVisibleText("surendhar_server");
-	//List<WebElement> scmURL = (List<WebElement>) driver.findElement(By.cssSelector("div[id='pipelineInput'] [style='display: none']"));
+	bServer.selectByIndex(0);
 }
 
 @Test(priority=5)
@@ -75,9 +74,9 @@ public void addDeployServerTest() {
 	driver.get("http://localhost:81/home");
 	driver.findElement(By.id("deployServerIcon")).click();
 	Select pName = new Select(driver.findElement(By.id("pipelineName")));
-	pName.selectByVisibleText("surendhar_pipeline");
+	pName.selectByIndex(0);
 	Select dType = new Select(driver.findElement(By.id("deploymentType")));
-	dType.selectByVisibleText("Server Deployment");
+	dType.selectByIndex(0);
 	driver.quit();
 }
 
